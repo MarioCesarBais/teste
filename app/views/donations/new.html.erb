@@ -1,0 +1,26 @@
+<%= form_with model: @donation, local: true, method: :post do |form| %>
+
+<div class="row__form-control">
+    <div class='row__form-control_amount'>
+      <%= form.radio_button :amount, 25, class: "radio_button25", :onclick=>"notification()" %>
+      € <%= form.label :amount, 25 %>
+    </div>
+    
+    <div class='row__form-control_amount'>
+      <%= form.radio_button :amount, 50, class: "radio_button50", :onclick=>"notification()" %>
+      € <%= form.label :amount, 50  %>
+    </div>
+
+    <div class='row__form-control_amount'>
+      <%= form.radio_button :amount, 75, class: "radio_button75", :onclick=>"notification()" %>
+      € <%= form.label :amount, 75 %>
+    </div>
+
+    <div class='row__form-control_amount'>
+      <%= form.radio_button :amount, 0, class: "radio_custom", :onclick=>"custom()" %> 
+      <%= form.label :custom %>
+    </div>
+    <%= form.submit "Create Donation" %>
+  </div>
+
+  <% end %>
